@@ -216,19 +216,22 @@ const EditMovie = () => {
     }
 
     const handleCheck = (event, position) => {
-        console.log("handle check called");
-        console.log("value in handle check:", event.target.value);
-        console.log("checked is", event.target.checked);
-        console.log("position is", position)
+        // console.log("handle check called");
+        // console.log("value in handle check:", event.target.value);
+        // console.log("checked is", event.target.checked);
+        // console.log("position is", position)
 
         let tmpArr = movie.genres;
         tmpArr[position].checked = !tmpArr[position].checked;
 
         let tmpIDs = movie.genres_array;
+        var tmpIDValue = parseInt(event.target.value,10);
+        // console.log("Value: ", tmpIDValue);
+        // console.log("Index in tmpIDs: ", tmpIDs.indexOf(tmpIDValue));
         if (!event.target.checked) {
-            tmpIDs.splice(tmpIDs.indexOf(event.target.value));
+            tmpIDs.splice(tmpIDs.indexOf(tmpIDValue), 1);
         } else {
-            tmpIDs.push(parseInt(event.target.value, 10));
+            tmpIDs.push(tmpIDValue);
         }
 
         setMovie({
@@ -277,7 +280,7 @@ const EditMovie = () => {
             <div>
                 <h2>Add/Edit Movie</h2>
                 <hr />
-                {/* <pre>{JSON.stringify(movie, null, 3)}</pre> */}
+                <pre>{JSON.stringify(movie, null, 3)}</pre>
 
                 <form onSubmit={handleSubmit}>
                     <input type="hidden" name="id" value={movie.id} id="id"/>
