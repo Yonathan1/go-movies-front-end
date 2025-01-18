@@ -12,7 +12,7 @@ const Select = (props) => {
                 onChange={props.onChange}
             >
                 <option value="">{props.placeholder}</option>
-                {props.option.map((option) => {
+                {props.options.map((option) => {
                     return (
                         <option key={option.id} value={option.id}>
                             {option.value}
