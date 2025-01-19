@@ -9,7 +9,7 @@ import Movies from './components/Movies';
 import Genres from './components/Genres';
 import EditMovie from './components/EditMovie';
 import ManageCatalogue from './components/ManageCatalogue';
-import GraphQL from './components/graphql';
+import GraphQL from './components/GraphQL';
 import Login from './components/Login';
 import Movie from './components/Movie';
 import OneGenre from './components/OneGenre';
@@ -50,7 +50,7 @@ const router = createBrowserRouter([
         element: <ManageCatalogue />
       },
       {
-        path: "/graphql",
+        path: "/GraphQL",
         element: <GraphQL />
       },
       {
